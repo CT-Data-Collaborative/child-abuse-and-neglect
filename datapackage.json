@@ -1,0 +1,317 @@
+{
+  "name": "child-abuse-and-neglect",
+  "datapackage_version": "1.0-beta.18",
+  "title": "Child Abuse and Neglect",
+  "description": "Child Abuse and Neglect presents the total number of allegations, substantiated cases, and the substantiation rate by allegation type for a given town. These data are subsettable by type of allegation and status of the report. Substantiation rate is calculated as a percent of total allegations that are considered 'substantiated' based on independent evaluations. DCF collects and CTdata.org carries annual data. DCF also publishes town-level data online in town reports.",
+  "version": "1.0",
+  "licenses": [{
+    "url": "http://opendatacommons.org/licenses/pddl/",
+    "name": "Open Data Commons Public Domain",
+    "version": "1.0",
+    "id": "odc-pddl"
+  }],
+  "sources": [{
+    "name": "ctdcf",
+    "web": ""
+  }],
+  "author":[{
+    "name": "Jenna Daly",
+    "email": "jdaly@ctdata.org",
+    "web": "http://ctdata.org"
+  }],
+  "contributor": [],
+  "resources": [{
+    "path": "data/child_abuse_neglect_2017.csv",
+    "format": "csv",
+    "schema": {
+      "fields": [{
+          "name": "Town",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "FIPS",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Year",
+          "type": "string",
+          "dimension": false
+        }, {
+          "name": "Allegation Type",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+			      "enum": [
+			        "All",
+			        "At Risk",
+			        "Educational Neglect",
+			        "Emotional Neglect",
+			        "High Risk Newborn",
+			        "Medical Neglect",
+			        "Physical Abuse",
+			        "Physical Neglect",
+			        "Sexual Abuse"
+			      ]
+			    }
+        }, { 
+          "name": "Report Status",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+			      "enum": [
+			        "Substantiated",
+			        "Alleged"
+			      ]
+			    }
+        }, { 
+          "name": "Measure Type",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+			      "enum": [
+			        "Number", 
+			        "Rate"
+			      ]
+			    }
+        }, {
+          "name": "Variable",
+          "type": "string",
+          "dimension": true,
+          "constraints": {
+			      "enum": [
+			        "Child Abuse and Neglect"
+			      ]
+			    }
+        }, {
+          "name": "Value",
+          "type": "number",
+          "dimension": false
+        }]
+      }
+    }
+  ],
+  "last_modified": "03/19/2018",
+  "ckan_extras": {
+    "full_description": {
+      "ckan_name": "Full Description",
+      "value": "Child Abuse and Neglect contains aggregate data concerning abuse/neglect reports accepted for a response from the Connecticut Department of Children and Families (DCF) for a given town. Abuse is a non-accidental injury to a child which, regardless of motive, is inflicted or allowed to be inflicted by the person responsible for the child's care. Neglect is the failure, whether intentional or not, of the person responsible for the child's care to provide and maintain adequate food, clothing, medical care, supervision, and/or education. These data are subsettable by type of allegation and status of the report. Allegation types include: At Risk, Educational Neglect, Emotional Neglect, High Risk Newborn, Medical Neglect, Physical Abuse, Physical Neglect, and Sexual Abuse. Substantiation rate is calculated as a percent of total allegations that are considered 'substantiated' based on independent evaluations. It is important to note that a single report may contain many allegations of abuse/neglect. Each one of these allegations are independently evaluated during the course of an investigations response, and a determination of whether or not reasonable cause to believe it occurred is made. If reasonable cause is found to exist then that allegation is 'Substantiated' and if not it is considered 'Unsubstantiated.' DCF collects and CTdata.org carries annual data. DCF also publishes town-level data online in town reports.",
+      "type": "string"
+    },
+    "suppression": {
+      "ckan_name": "Suppression",
+      "value": "Towns with less than 10 substantiated cases in any category have their values suppressed to minimize the risk of revealing protected information that could lead to personal identification of individual children. Suppressed values are indicated by an * in the table and -9999 in the raw data.",
+      "type": "string"
+    },
+    "technical_notes": {
+      "ckan_name": "Technical Notes",
+      "value": "",
+      "type": "string"
+    },
+    "socrata": {
+      "ckan_name": "Socrata",
+      "value": "True",
+      "type": "string"
+    },
+    "socrata_url": {
+      "ckan_name": "Socrata Dataset URL",
+      "value": "https://data.ct.gov/Health-and-Human-Services/CT-DCF-Abuse-Neglect-Reports-and-Allegations-by-To/337d-73fs",
+      "type": "string"
+    },
+    "socrata_dataset_name": {
+      "ckan_name": "Socrata Dataset Name",
+      "value": "CT DCF Abuse/Neglect Reports and Allegations by Town and State Fiscal Year",
+      "type": "string"
+    }, 
+    "domain": {
+      "ckan_name": "Domain",
+      "value": "Safety",
+      "type": "string"
+    },
+    "subdomain": {
+      "ckan_name": "Subdomain",
+      "value": "Child Welfare",
+      "type": "string"
+    },
+    "geography": {
+      "ckan_name": "Geography",
+      "value": "Town",
+      "type": "string",
+      "constraints": {"enum": ["Town", "County", "Town/County", "District", "Other"]}
+    },
+    "frequency": {
+      "ckan_name": "Frequency",
+      "value": "Annual",
+      "type": "string"
+    },
+    "years_in_catalog": {
+      "ckan_name": "Years in Catalog",
+      "value": ["2011", "2012", "2013", "2014", "2015", "2016", "2017"],
+      "type": "array"
+    },
+    "latest_year": {
+      "ckan_name": "Latest Year Available",
+      "value": "2017",
+      "type": "string"
+    },
+    "disabled_views": {
+      "ckan_name": "Disabled Views",
+      "value": [],
+      "type": "array",
+      "constraints": {"enum": ["map", "table", "bar", "line"]}
+    },
+    "units": {
+      "ckan_name": "Units",
+      "value": {
+        "Number": "",
+        "Percent": "%"
+      }
+    },
+    "expected_number_of_geographies": {
+      "ckan_name": "Expected Number of Unique Geographies",
+      "value": 170,
+      "type": "string"
+    },   
+    "default": {      
+      "ckan_name": "Default",
+      "value": {
+        "Town": "Connecticut",
+        "Year": ["2017"],
+        "Allegation Type": ["All"],
+        "Variable": ["Child Abuse and Neglect"]
+      },
+      "type": "object"
+    }
+  }, 
+  "spot_checks": [
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Hartford",
+        "Year": "2011",
+        "Allegation Type": "All",
+        "Report Status": "Alleged",
+        "Measure Type": "Number",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 7230
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Norwich",
+        "Year": "2012",
+        "Allegation Type": "At Risk",
+        "Report Status": "Substantiated",
+        "Measure Type": "Number",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": -9999
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Stamford",
+        "Year": "2013",
+        "Allegation Type": "Educational Neglect",
+        "Report Status": "Substantiated",
+        "Measure Type": "Rate",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": -9999
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "New Haven",
+        "Year": "2014",
+        "Allegation Type": "Emotional Neglect",
+        "Report Status": "Alleged",
+        "Measure Type": "Number",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "int",
+        "value": 1123
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "New Haven",
+        "Year": "2015",
+        "Allegation Type": "Physical Abuse",
+        "Report Status": "Substantiated",
+        "Measure Type": "Rate",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 7.13
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Plainfield",
+        "Year": "2016",
+        "Allegation Type": "Sexual Abuse",
+        "Report Status": "Substantiated",
+        "Measure Type": "Rate",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": -9999
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Bridgeport",
+        "Year": "2017",
+        "Allegation Type": "Physical Neglect",
+        "Report Status": "Substantiated",
+        "Measure Type": "Rate",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 20.95
+      }
+    }
+  ],
+  "dimension_groups": [
+    {
+      "Measure Type": ["Number"], 
+      "Report Status": ["Alleged", "Substantiated"], 
+      "Allegation Type": ["All", "At Risk", "Educational Neglect", 
+                          "Emotional Neglect", "High Risk Newborn", 
+                          "Medical Neglect", "Physical Abuse", 
+                          "Physical Neglect", "Sexual Abuse"]
+    }, 
+    {
+      "Measure Type": ["Rate"], 
+      "Report Status": ["Substantiated"], 
+      "Allegation Type": ["All", "At Risk", "Educational Neglect", 
+                          "Emotional Neglect", "High Risk Newborn", 
+                          "Medical Neglect", "Physical Abuse", 
+                          "Physical Neglect", "Sexual Abuse"]
+    }
+  ]
+}

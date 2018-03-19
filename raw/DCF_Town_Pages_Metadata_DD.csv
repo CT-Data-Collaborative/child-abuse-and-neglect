@@ -1,0 +1,35 @@
+COLUMN NAME,DATA TYPE,Description
+FISC_PERIOD,Text,Reporting Period
+FISC_YEAR,Number,Reporting State Fiscal Year 
+REGION,Text,DCF Region responsible for responding to the Reports.  A single Region is comprised of 2 – 3 Offices.
+OFFICE,Text,"DCF Office responsible for responding to the Reports.  With one exception, a single Office is responsible for covering many Towns.  Our New Haven Office is responsible solely for the town of New Haven. "
+TOWN,Text,Town
+TTL_CPS_ACEPT_M,Text,Total Number of CPS Reports Accepted
+TTL_CPS_SUBS_M,Text,Total Number of CPS Reports Substantiated
+TTL_ALLEGAT_M,Text,Total Number of Allegations
+TTL_ALLEGAT_SUBS_M,Text,Total Number of Allegations Substantiated
+TTL_PHYS_ABUSE_M,Text,Total Number of Physical Abuse Allegations
+TTL_EDUC_NEGLECT_M,Text,Total Number of Educational Neglect Allegations
+TTL_EMOT_NEGLECT_M,Text,Total Number of Emotional Neglect Allegations
+TTL_HIGH_RISK_M,Text,Total Number of High Risk Newborn Allegations
+TTL_MEDI_NEGLECT_M,Text,Total Number of Medical Neglect Allegations
+TTL_AT_RISK_M,Text,Total Number of At Risk Allegations
+TTL_PHYS_NEGLECT_M,Text,Total Number of Physical Neglect Allegations
+TTL_SEX_ABUSE_M,Text,Total Number of Sexual Abuse Allegations
+SUBS_PHYS_ABUSE_M,Text,Total Number of Physical Abuse Allegations Substantiated
+SUBS_EDUC_NEGLECT_M,Text,Total Number of Educational Neglect Allegations Substantiated
+SUBS_EMOT_NEGLECT_M,Text,Total Number of Emotional Neglect Allegations Substantiated
+SUBS_HIGH_RISK_M,Text,Total Number of High Risk Newborn Allegations Substantiated
+SUBS_MEDI_NEGLECT_M,Text,Total Number of Medical Neglect Allegations Substantiated
+SUBS_AT_RISK_M,Text,Total Number of At Risk Allegations Substantiated
+SUBS_PHYS_NEGLECT_M,Text,Total Number of Physical Neglect Allegations Substantiated
+SUBS_SEX_ABUSE_M,Text,Total Number of Sexual Abuse Allegations Substantiated
+CHILDREN_SUBS,Text,Number of unique Children with at least one Substantiated Allegation during the reporting period
+RATE_PHYS_ABUSE_M,Text,Physical Abuse Substantiation Rate
+RATE_EDUC_NEGLECT_M,Text,Educational Neglect Substantiation Rate
+RATE_EMOT_NEGLECT_M,Text,Emotional Neglect Substantiation Rate
+RATE_HIGH_RISK_M,Text,High Risk Newborn Substantiation Rate
+RATE_MEDI_NEGLECT_M,Text,Medical Neglect Substantiation Rate
+RATE_AT_RISK_M,Text,At Risk Substantiation Rate
+RATE_PHYS_NEGLECT_M,Text,Physical Neglect Substantiation Rate
+RATE_SEX_ABUSE_M,Text,Sexual Abuse Substantiation Rate
