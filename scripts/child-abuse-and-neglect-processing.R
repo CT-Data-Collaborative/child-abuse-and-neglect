@@ -57,10 +57,6 @@ caan_df_long_with_desc <- caan_df_long_with_desc[!(is.na(caan_df_long_with_desc$
 caan_df_long_with_desc <- caan_df_long_with_desc %>% 
   select(TOWN, -REGION, FISC_YEAR, `Allegation Type`, `Report Status`, `Measure Type`, Value)
 
-#Set suppressed values
-caan_df_long_with_desc$Value[caan_df_long_with_desc$Value == "-"] <- NA
-caan_df_long_with_desc$Value[grep("<=", caan_df_long_with_desc$Value)] <- NA
-
 #Rearrange df to calcuate rates for all allegation types
 caan_df_calc <- caan_df_long_with_desc %>% 
   filter(`Measure Type` == "Number") %>% 
@@ -85,6 +81,8 @@ fips <- (town_fips_dp$data[[1]])
 
 caan_df_calc_long_fips <- merge(caan_df_calc_long, fips, by.x = "TOWN", by.y = "Town", all.y=T)
 caan_df_calc_long_fips$Variable <- "Child Abuse and Neglect"
+
+#Set values that are "-" or ranges to NA
 caan_df_calc_long_fips$Value <- as.numeric(caan_df_calc_long_fips$Value)
 
 
