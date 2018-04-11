@@ -90,7 +90,7 @@
       }
     }
   ],
-  "last_modified": "03/19/2018",
+  "last_modified": "04/11/2018",
   "ckan_extras": {
     "full_description": {
       "ckan_name": "Full Description",
@@ -293,6 +293,22 @@
         "type": "$match",
         "number type": "float",
         "value": 20.95
+      }
+    },
+    {
+      "type": "$lookup",
+      "filter": {
+        "Town": "Norwich",
+        "Year": "2017",
+        "Allegation Type": "Physical Abuse",
+        "Report Status": "Substantiated",
+        "Measure Type": "Rate",       
+        "Variable": "Child Abuse and Neglect"
+      },
+      "expected": {
+        "type": "$match",
+        "number type": "float",
+        "value": 8.21
       }
     }
   ],
